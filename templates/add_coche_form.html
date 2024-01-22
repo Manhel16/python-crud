@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card rounded shadow p-4 bg-secondary bg-opacity-10">
+        <h2 class="mb-4 text-center text-success">Añadir Coche</h2>
+
+        <form action="/new" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="marca" class="form-label">Marca:</label>
+                <input type="text" class="form-control" name="marca" placeholder="Escribe la marca del coche" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="modelo" class="form-label">Modelo:</label>
+                <input type="text" class="form-control" name="modelo" placeholder="Escribe el modelo del coche"
+                    required>
+            </div>
+
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción:</label>
+                <input type="text" class="form-control" name="descripcion"
+                    placeholder="Escribe una pequeña descripción del modelo" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="anio" class="form-label">Año:</label>
+                <input type="number" class="form-control" name="anio" placeholder="Escribe el año en el que se vendió"
+                    required>
+            </div>
+
+            <div class="mb-3">
+                <label for="precio" class="form-label">Precio:</label>
+                <input type="number" class="form-control" name="precio" placeholder="Escribe el precio del vehículo"
+                    required>
+            </div>
+
+            <div class="mb-3">
+                <label for="imagen_nombre" class="form-label">Selecciona una imagen (nombre):</label>
+                <input type="file" class="form-control btn btn-success" name="imagen_nombre" accept="image/*">
+            </div>
+
+            <div class="mb-3">
+                <label for="imagen_blob" class="form-label">Selecciona una imagen (blob):</label>
+                <input type="file" class="form-control btn btn-success" name="imagen_blob" accept="image/*">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

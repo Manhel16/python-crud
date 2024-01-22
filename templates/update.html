@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card rounded shadow p-4 bg-secondary bg-opacity-10">
+        <h2 class="text-success text-center">Actualizar Coche</h2>
+
+        <form action="/update/{{coches.id}}" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="marca">Marca:</label>
+                <input type="text" name="marca" class="form-control" placeholder="Escribe la marca del coche" required
+                    value="{{ coches.marca }}">
+            </div>
+
+            <div class="mb-3">
+                <label for="modelo">Modelo:</label>
+                <input type="text" name="modelo" class="form-control" placeholder="Escribe el modelo del coche" required
+                    value="{{ coches.modelo }}">
+            </div>
+
+            <div class="mb-3">
+                <label for="descripcion">Descripción:</label>
+                <input type="text" name="descripcion" class="form-control"
+                    placeholder="Escribe una pequeña descripción del modelo" required value="{{ coches.descripcion }}">
+            </div>
+
+            <div class="mb-3">
+                <label for="anio">Año:</label>
+                <input type="number" name="anio" class="form-control" placeholder="Escribe el año en el que se vendió"
+                    required value="{{ coches.anio }}">
+            </div>
+
+            <div class="mb-3">
+                <label for="precio">Precio:</label>
+                <input type="number" name="precio" class="form-control" placeholder="Escribe el precio del vehículo"
+                    required value="{{ coches.precio }}">
+            </div>
+
+            <!-- Campos ocultos con los valores actuales -->
+            <input type="hidden" name="marca_actual" value="{{ coches.marca }}">
+            <input type="hidden" name="modelo_actual" value="{{ coches.modelo }}">
+            <input type="hidden" name="descripcion_actual" value="{{ coches.descripcion }}">
+            <input type="hidden" name="anio_actual" value="{{ coches.anio }}">
+            <input type="hidden" name="precio_actual" value="{{ coches.precio }}">
+
+            <div class="mb-3">
+                <label for="imagen_nombre">Selecciona una imagen (nombre):</label>
+                <input type="file" name="imagen_nombre" class="form-control bg-success" accept="image/*">
+            </div>
+
+            <div class="mb-3">
+                <label for="imagen_blob">Selecciona una imagen (blob):</label>
+                <input type="file" name="imagen_blob" class="form-control bg-success" accept="image/*">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
