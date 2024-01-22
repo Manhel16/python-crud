@@ -12,6 +12,9 @@
         "dest": "src/routes/rutas.py"
       }
     ],
+    "commands": {
+      "build": "sudo apt-get install -y libmariadbclient-dev && pip3.9 install --disable-pip-version-check --target . --upgrade -r /vercel/path0/requirements.txt"
+    },
     "env": {
       "MYSQLCLIENT_CFLAGS": "`./mysql_config --cflags`",
       "MYSQLCLIENT_LDFLAGS": "`./mysql_config --libs`"
