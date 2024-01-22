@@ -1,14 +1,21 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "*.py",
-        "use": "@vercel/python"
-      }
-    ],
-    "routes": [
-      {
-        "src": "(.*)",
-        "dest": "app.py"
-      }]
+  "version": 2,
+  "builds": [
+    {
+      "src": "*.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "(.*)",
+      "dest": "app.py"
+    }
+  ],
+  "build": {
+    "env": {
+      "MYSQLCLIENT_CFLAGS": "-I/path/to/mysqlclient/headers",
+      "MYSQLCLIENT_LDFLAGS": "-L/path/to/mysqlclient/lib -lmysqlclient"
+    }
   }
+}
